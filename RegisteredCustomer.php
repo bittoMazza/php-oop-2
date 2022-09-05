@@ -6,9 +6,9 @@
         protected $email;
         protected $password;
 
-        function __construct($_card_code,$_card_date,$_address,$_email,$_password)
+        function __construct($_address,$_email,$_password)
         {
-            parent::__construct($_card_code,$_card_date,$_address);
+            parent::__construct($_address);
             $this->discount = 20;
             $this->email = $_email;
             $this->password = $_password;

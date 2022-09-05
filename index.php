@@ -23,6 +23,9 @@
     $not_customer->AddProducts(new Product('nutella','ferrero','cibo',5));
     var_dump($not_customer);
 
+    echo 'TEST CARTA DI CREDITO';
+    $creditCard = new CreditCard(2132,'2021/10');
+    var_dump($creditCard);
 
 
 ?>

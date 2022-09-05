@@ -17,18 +17,21 @@
             return $this->card_date;
         }
 
-        public function SetCardCode($card_code){
-            if(is_int($card_code))
+        public function SetCardCode($_card_code){
+            if(is_int($_card_code))
             {
-                $this->card_code = $card_code;
+                $this->card_code = $_card_code;
             }
         }
 
-        public function SetCardDate($card_date)
+        public function SetCardDate($_card_date)
         {
-            $current_date = date("Y/m/d");
-            if($current_date > $card_date){
+            $current_date = date("Y/m");
+            if($current_date > $_card_date){
                 $this->card_date = 'carta non valida';
+            }
+            elseif($current_date < $_card_date){
+                $this->card_date = $_card_date;
             }
         }
     }
