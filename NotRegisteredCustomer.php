@@ -1,7 +1,7 @@
 <?php
     include_once __DIR__  .'./Customer.php';
 
-    class RegisteredCustomer extends Customer{
+    class NotRegisteredCustomer extends Customer{
         protected $discount;
 
         function __construct($_card_code,$_card_date,$_products,$_address)
