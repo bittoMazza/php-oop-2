@@ -12,7 +12,6 @@
             $this->SetCardCode($_card_code);
             $this->card_date = $_card_date;
             $this->address = $_address;
-            $this->products = new Product('da','rr','pasta',20);
         }
 
         public function GetCardCode(){
@@ -37,7 +36,7 @@
         }
 
         public function AddProducts($_product){
-            $this->products.array_push($_product);
+            array_push($this->products,$_product);
         }
 
 /*         public function SetCardDate($card_date)
