@@ -19,6 +19,20 @@
             return $this->address;
         }
 
+        public function GetPrice(){
+            return $this->price;
+        }
+
+        public function GetTotalPrice()
+        {
+            $sum = 0;
+            foreach($this->products as $product)
+            {
+                $sum = $sum + $product->GetPrice();
+            }
+            return $sum;
+        }
+
         public function SetCreditCard($_credit_card){
             $this->credit_card = $_credit_card;
         }

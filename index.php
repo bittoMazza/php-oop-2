@@ -1,11 +1,8 @@
 <?php
+    include_once __DIR__.'./Order.php';
     include_once __DIR__.'./RegisteredCustomer.php';
     include_once __DIR__.'./NotRegisteredCustomer.php';
     include_once __DIR__.'./Product.php';
-
-    echo 'TEST CLASSE PRODOTTO';
-    $product= new Product('ciccio','pasticcio','cibo',150);
-    var_dump($product);
 
     echo 'TEST CLASSE CLIENTE';
     $customer = new RegisteredCustomer(6555,'15/05/25','Via emilia','ciccio@pasticcio.com','nonteladico','pasta','m','prosciutto');
@@ -24,8 +21,13 @@
     var_dump($not_customer);
 
     echo 'TEST CARTA DI CREDITO';
-    $creditCard = new CreditCard(2132,'2021/10');
+    $creditCard = new CreditCard(2132,'2023/10');
     var_dump($creditCard);
+
+    $customer->SetCreditCard($creditCard);
+    var_dump($customer);
+
+    var_dump($customer->GetTotalPrice())
 
 
 ?>
