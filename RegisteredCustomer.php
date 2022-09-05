@@ -15,6 +15,7 @@
 
         }
 
+
         public function GetDiscount(){
             return $this->discount;
         }
