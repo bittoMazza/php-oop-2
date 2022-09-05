@@ -5,14 +5,14 @@
         protected $card_code;
         protected $card_date;
         protected $address;
-        protected $products;
+        protected $products = [];
 
-        function __construct($_card_code,$_card_date,$_address,...$_products)
+        function __construct($_card_code,$_card_date,$_address)
         {
             $this->SetCardCode($_card_code);
             $this->card_date = $_card_date;
             $this->address = $_address;
-            $this->products = $_products;
+            $this->products = new Product('da','rr','pasta',20);
         }
 
         public function GetCardCode(){
@@ -36,8 +36,8 @@
             }
         }
 
-        public function AddProducts(...$_products){
-            $this->products = array_merge($this->products, $_products);
+        public function AddProducts($_product){
+            $this->products.array_push($_product);
         }
 
 /*         public function SetCardDate($card_date)

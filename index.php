@@ -9,5 +9,6 @@
     $customer = new RegisteredCustomer(6555,'15/05/25','Via emilia','ciccio@pasticcio.com','nonteladico','pasta','m','prosciutto');
     var_dump($customer);
 
+    $customer->AddProducts('nome_prodott','dsda','dsad','dsdas')
 
 ?>
