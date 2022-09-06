@@ -3,42 +3,29 @@
     include_once __DIR__ .'./CreditCard.php';
 
     class Customer{
-        protected $address;
-        protected $credit_card;
-        protected $products = [];
+        protected $cart = [];
 
-        function __construct($_address)
-        {
-            $this->address = $_address;
-        }
 
-        public function GetProducts(){
-            return $this->products;
-        }
-        public function GetAddress(){
-            return $this->address;
-        }
-
-        public function GetPrice(){
-            return $this->price;
+        public function Getcart(){
+            return $this->cart;
         }
 
         public function GetTotalPrice()
         {
             $sum = 0;
-            foreach($this->products as $product)
+            foreach($this->cart as $product)
             {
                 $sum = $sum + $product->GetPrice();
             }
             return $sum;
         }
-
-        public function SetCreditCard($_credit_card){
-            $this->credit_card = $_credit_card;
+        
+        public function AddProduct($product){
+            if(is_a($product,"Product",true))
+            {
+                array_push($this->cart,$product);
+            }
         }
 
-        public function AddProducts($_product){
-            array_push($this->products,$_product);
-        }
     }
 ?>

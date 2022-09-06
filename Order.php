@@ -2,8 +2,7 @@
 
     class Order{
         protected $date;
-        protected $total_price;
-
-
+        protected $id;
+        
     }
 ?>
